@@ -1,12 +1,19 @@
 .switchWrapper {
-    position: relative;
-    
+  position: relative;
   
-    > :first-child ~ * {
-      position: absolute;
-      top: 200px;
-      left: 0;
-      width: 100%;
-      transition: 5s;
-    }
+  @keyframes
+  changePosition {
+  from {
+  transform: translate(0, 200px)
+  }
+  to {transform: translate(0)}
+  }
+  
+  > div {
+  position: absolute;
+  top: 0px;
+  left: 0;
+  width: 100%;
+  animation: changePosition 1s ease-out
+  }
   }
