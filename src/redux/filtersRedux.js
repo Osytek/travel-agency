@@ -11,7 +11,7 @@ const createActionName = name => `app/${reducerName}/${name}`;
 // action types
 export const CHANGE_PHRASE = createActionName('CHANGE_PHRASE');
 // TODO - add other action types
-export const CHANGE_VALUE = createActionName('CHANGE_DURATION');
+export const CHANGE_VALUE = createActionName('CHANGE_VALUE');
 export const CHANGE_CHECK = createActionName('CHANGE_CHECK');
 
 // action creators
