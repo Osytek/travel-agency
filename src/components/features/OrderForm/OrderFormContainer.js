@@ -3,13 +3,8 @@ import OrderForm from './OrderForm';
 import {getOrderOptions} from '../../../redux/orderRedux';
 
 
-const mapStateToProps = (state, props) => {
-  const options = getOrderOptions(state, props.match.params.id);
-
-  return {
-    ...options,
-    
-  };
-};
+const mapStateToProps = state => ({
+  options: getOrderOptions(state),
+});
 
 export default connect(mapStateToProps)(OrderForm);
