@@ -4,18 +4,18 @@ import OrderSummary from '../OrderSummary/OrderSummary.js';
 import PropTypes from 'prop-types';
 class OrderForm extends React.Component {
   render(){
-    const {cost, options} = this.props;
+    const {tripCost, options} = this.props;
     return(
       <Row>
         <Col xs={12}>
-          <OrderSummary tripCost={cost} tripOptions={options}></OrderSummary>
+          <OrderSummary tripCost={tripCost} tripOptions={options}></OrderSummary>
         </Col>
       </Row>
     );
   }
 }
 OrderForm.propTypes = {
-  cost: PropTypes.string,
+  tripCost: PropTypes.string,
   options: PropTypes.string,
 };
 export default OrderForm;
