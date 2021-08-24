@@ -4,13 +4,11 @@ import OrderSummary from '../OrderSummary/OrderSummary.js';
 import PropTypes from 'prop-types';
 import pricing from '../../../data/pricing.json';
 import OrderOption from '../OrderOption/OrderOption.js';
-import { setOrderOption } from '../../../redux/orderRedux.js';
+
 class OrderForm extends React.Component {
   render(){
-    const {tripCost, options, id} = this.props;
-    console.log(setOrderOption, 'currentValue');
-    console.log(options, 'options');
-    console.log(id, 'id');
+    const {tripCost, options, setOrderOption} = this.props;
+
     return(
       <Row>
         {pricing.map(pricing => (
@@ -29,7 +27,7 @@ OrderForm.propTypes = {
   tripCost: PropTypes.string,
   options: PropTypes.object,
   pricing: PropTypes.object,
-  id: PropTypes.string,
+  setOrderOption: PropTypes.func,
   currentValue: PropTypes.string,
 };
 export default OrderForm;

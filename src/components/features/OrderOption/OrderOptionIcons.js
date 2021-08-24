@@ -15,7 +15,8 @@ class OrderOptionIcons extends React.Component {
         {values.map(value => (
           <div className={currentValue === value.id ? styles.iconActive : styles.icon} 
             key={value.id} 
-            onClick={event => setOptionValue(event.currentTarget.id)}
+            // eslint-disable-next-line no-unused-vars
+            onClick={event => setOptionValue(value.id)}
             value={value.id}>
             <Icon name={value.icon}/>
             {value.name}
@@ -27,9 +28,9 @@ class OrderOptionIcons extends React.Component {
   }
 }
 OrderOptionIcons.propTypes = {
-  values: PropTypes.node,
-  setOptionValue: PropTypes.node,
-  required: PropTypes.node,
+  values: PropTypes.array,
+  setOptionValue: PropTypes.func,
+  required: PropTypes.any,
   currentValue: PropTypes.string,
 };
 export default OrderOptionIcons;
