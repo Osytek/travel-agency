@@ -21,21 +21,13 @@ class OrderOptionCheckboxes extends React.Component {
     return(
       <div className={styles.checkboxes}>
         {values.map(value => (
-          <label
-            key={value.id} 
-            // eslint-disable-next-line no-unused-vars
-            onClick={event => setOptionValue(value.id)}
-            value={value.id}>
-
-            <input 
-              type='checkbox' 
-              value={value.price}
+          <label key={value.id}>
+            <input
+              type="checkbox"
+              value={value.id}
               onChange={event => setOptionValue(newValueSet(currentValue, value.id, event.currentTarget.checked))}
-            >
-            </input>
-
-            {value.name}
-            ({formatPrice(value.price)})
+            />
+            {value.name}  ({formatPrice(value.price)})
           </label>
         ))}
       </div>
